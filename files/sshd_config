@@ -87,9 +87,9 @@ ChallengeResponseAuthentication no
 UsePAM yes
 
 #AllowAgentForwarding yes
-#AllowTcpForwarding yes
+AllowTcpForwarding yes
 #GatewayPorts no
-X11Forwarding yes
+X11Forwarding no
 #X11DisplayOffset 10
 #X11UseLocalhost yes
 #PermitTTY yes
@@ -117,8 +117,5 @@ AcceptEnv LANG LC_* COLORTERM NO_COLOR
 #Subsystem       sftp    /usr/lib/openssh/sftp-server
 
 # Example of overriding settings on a per-user basis
-#Match User anoncvs
-#       X11Forwarding no
-#       AllowTcpForwarding no
-#       PermitTTY no
-#       ForceCommand cvs server
+Match User accessuser
+       ForceCommand /app/login_script.sh
