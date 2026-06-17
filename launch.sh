@@ -6,7 +6,5 @@ podman run \
    -d \
    -p 9345:22 \
    -v $project_directory/ssh:/app/ssh \
-   --cap-add SYS_ADMIN \
-   --security-opt apparmor:unconfined \
-   --name  ssh_forward_hop \
+   --name ssh_forward_hop \
    ssh_forward_hop
