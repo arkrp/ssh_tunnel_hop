@@ -29,7 +29,7 @@ Include /etc/ssh/sshd_config.d/*.conf
 # Authentication:
 
 #LoginGraceTime 2m
-#PermitRootLogin prohibit-password
+PermitRootLogin no
 #StrictModes yes
 #MaxAuthTries 6
 #MaxSessions 10
@@ -53,7 +53,7 @@ Include /etc/ssh/sshd_config.d/*.conf
 #IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to "no" here!
-#PasswordAuthentication yes
+PasswordAuthentication no
 #PermitEmptyPasswords no
 
 # Change to "yes" to enable keyboard-interactive authentication.  Depending on
@@ -61,6 +61,7 @@ Include /etc/ssh/sshd_config.d/*.conf
 # one-time passwords or some combination of these and other methods.
 # Beware issues with some PAM modules and threads.
 KbdInteractiveAuthentication no
+ChallengeResponseAuthentication no
 
 # Kerberos options
 #KerberosAuthentication no
