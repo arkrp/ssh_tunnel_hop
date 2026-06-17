@@ -1,7 +1,7 @@
 #!/bin/bash
-echo "development container online!"
+echo "starting ssh tunnel hop"
+cp -R /app/ssh /home/accessuser/.ssh
+chown -R accessuser:accessuser /home/accessuser/.ssh
 chmod 0755 /var/run/sshd
-echo "to use this container, connect via ssh"
-cp -R /app/ssh /home/connect/.ssh
-chown -R connect:connect /home/connect/.ssh
+echo "ssh proxy hop is online"
 /usr/sbin/sshd -D
